@@ -33,13 +33,14 @@ if ($User = validateAuth($username, $apiaccesskey)) {
             $ServiceList = NULL;
             $Group = 'Service Group';
             $ServiceList[$Group]['GROUPNAME'] = $Group;
+            $ServiceList[$Group]['GROUPTYPE'] = 'IMEI'; // IMEI OR SERVER OR REMOTE
 
             /* LOOP of service by group*/
             {
                 $SERVICEID = 1;
                 $ServiceList[$Group]['GROUPTYPE'] = 'IMEI';  //IMEI OR SERVER
                 $ServiceList[$Group]['SERVICES'][$SERVICEID]['SERVICEID'] = $SERVICEID;
-                $ServiceList[$Group]['SERVICES'][$SERVICEID]['SERVICETYPE'] = 'IMEI'; //IMEI OR SERVER
+                $ServiceList[$Group]['SERVICES'][$SERVICEID]['SERVICETYPE'] = 'IMEI'; // IMEI OR SERVER OR REMOTE
                 $ServiceList[$Group]['SERVICES'][$SERVICEID]['SERVICENAME'] = 'Service Name';
                 $ServiceList[$Group]['SERVICES'][$SERVICEID]['CREDIT'] = 1;
                 $ServiceList[$Group]['SERVICES'][$SERVICEID]['INFO'] = utf8_encode('Service Information ');
